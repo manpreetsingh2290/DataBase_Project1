@@ -4,15 +4,6 @@ Steps to execute project:
 3. Change the data source entry (SQL Server data connection settings) in file (..\S2G3-PVFAPP\S2G3-PVFAPP\Web.config)
 3. Run the project.
 
-Notes:
-1. Changes done to create new view for Customer Orders. 
-2. We can now view the Customer Orders or invoices in better format 
-(For reference screen shot(Invoice_Screen_Shot.PNG) of generated invoice is attached).
-3. To edit, delete and create orders user has to perform these steps seperately only i.e using Orders, Order Line and Customer Views.
-
-
-Project Submitted by:
-Manpreet Singh
 
 
 Reference for invoice template code:
