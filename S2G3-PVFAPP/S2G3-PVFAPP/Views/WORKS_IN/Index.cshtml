@@ -1,0 +1,51 @@
+﻿@model IEnumerable<S2G3_PVFAPP.Models.WORKS_IN>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Joining_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Enable_Flag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMPLOYEE.Employee_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WORK_CENTER.Work_Center_Location)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Joining_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Enable_Flag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMPLOYEE.Employee_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WORK_CENTER.Work_Center_Location)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {employeeID=item.Employee_ID, workCenterID=item.Work_Center_ID }) |
+            @Html.ActionLink("Details", "Details", new { employeeID=item.Employee_ID, workCenterID=item.Work_Center_ID  }) |
+            @Html.ActionLink("Delete", "Delete", new { employeeID=item.Employee_ID, workCenterID=item.Work_Center_ID  })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<S2G3_PVFAPP.Models.PRODUCED_IN>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Production_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT.Product_Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WORK_CENTER.Work_Center_Location)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Production_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT.Product_Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WORK_CENTER.Work_Center_Location)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { productID=item.Product_ID, workCenterID=item.Work_Center_ID }) |
+            @Html.ActionLink("Details", "Details", new { productID=item.Product_ID, workCenterID=item.Work_Center_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { productID=item.Product_ID, workCenterID=item.Work_Center_ID })
+        </td>
+    </tr>
+}
+
+</table>

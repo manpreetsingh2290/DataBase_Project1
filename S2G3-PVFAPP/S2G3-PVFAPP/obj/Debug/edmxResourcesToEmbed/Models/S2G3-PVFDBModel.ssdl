@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="S2G3_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Customer_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Customer_Address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Customer_Postal_Code" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DOES_BUSINESS_IN">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+      <PropertyRef Name="Territory_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Territory_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Business_Start_Date" Type="date" Nullable="false" />
+    <Property Name="Business_End_Date" Type="date" />
+  </EntityType>
+  <EntityType Name="EMPLOYEE">
+    <Key>
+      <PropertyRef Name="Employee_ID" />
+    </Key>
+    <Property Name="Employee_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Employee_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Employee_Address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Supervisor_ID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="HAS_SKILL">
+    <Key>
+      <PropertyRef Name="Employee_ID" />
+      <PropertyRef Name="Skill_ID" />
+    </Key>
+    <Property Name="Employee_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Skill_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Enable_Flag" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORDER">
+    <Key>
+      <PropertyRef Name="Order_ID" />
+    </Key>
+    <Property Name="Order_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Order_Date" Type="date" Nullable="false" />
+    <Property Name="Customer_ID" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORDER_LINE">
+    <Key>
+      <PropertyRef Name="Order_ID" />
+      <PropertyRef Name="Product_ID" />
+    </Key>
+    <Property Name="Order_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Product_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Ordered_Quantity" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCED_IN">
+    <Key>
+      <PropertyRef Name="Product_ID" />
+      <PropertyRef Name="Work_Center_ID" />
+    </Key>
+    <Property Name="Product_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Work_Center_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Production_Date" Type="date" />
+    <Property Name="Product_Quantity" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="Product_ID" />
+    </Key>
+    <Property Name="Product_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Product_Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Product_Standard_Price" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Product_Line_ID" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCT_LINE">
+    <Key>
+      <PropertyRef Name="Product_Line_ID" />
+    </Key>
+    <Property Name="Product_Line_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Product_Line_Name" Type="varchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RAW_MATERIAL">
+    <Key>
+      <PropertyRef Name="Material_ID" />
+    </Key>
+    <Property Name="Material_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Material_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Material_Standard_Cost" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Unit_Of_Measure" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SALESPERSON">
+    <Key>
+      <PropertyRef Name="Salesperson_ID" />
+    </Key>
+    <Property Name="Salesperson_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Salesperson_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Salesperson_Telephone" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="Salesperson_Fax" Type="numeric" Precision="15" Scale="0" />
+    <Property Name="Territory_ID" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SKILL">
+    <Key>
+      <PropertyRef Name="Skill_ID" />
+    </Key>
+    <Property Name="Skill_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Skill_Name" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SUPPLIES">
+    <Key>
+      <PropertyRef Name="Vender_ID" />
+      <PropertyRef Name="Material_ID" />
+    </Key>
+    <Property Name="Vender_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Material_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Supply_Unit_Price" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TERRITORY">
+    <Key>
+      <PropertyRef Name="Territory_ID" />
+    </Key>
+    <Property Name="Territory_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Territory_Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USES">
+    <Key>
+      <PropertyRef Name="Product_ID" />
+      <PropertyRef Name="Material_ID" />
+    </Key>
+    <Property Name="Product_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Material_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Goes_Into_Quantity" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VENDER">
+    <Key>
+      <PropertyRef Name="Vender_ID" />
+    </Key>
+    <Property Name="Vender_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Vender_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Vender_Address" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WORK_CENTER">
+    <Key>
+      <PropertyRef Name="Work_Center_ID" />
+    </Key>
+    <Property Name="Work_Center_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Work_Center_Location" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WORKS_IN">
+    <Key>
+      <PropertyRef Name="Employee_ID" />
+      <PropertyRef Name="Work_Center_ID" />
+    </Key>
+    <Property Name="Employee_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Work_Center_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Joining_Date" Type="date" Nullable="false" />
+    <Property Name="Enable_Flag" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_DOES_BUSINESS_IN_CUSTOMER">
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="1" />
+    <End Role="DOES_BUSINESS_IN" Type="Self.DOES_BUSINESS_IN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="DOES_BUSINESS_IN">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOES_BUSINESS_IN_TERRITORY">
+    <End Role="TERRITORY" Type="Self.TERRITORY" Multiplicity="1" />
+    <End Role="DOES_BUSINESS_IN" Type="Self.DOES_BUSINESS_IN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TERRITORY">
+        <PropertyRef Name="Territory_ID" />
+      </Principal>
+      <Dependent Role="DOES_BUSINESS_IN">
+        <PropertyRef Name="Territory_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_EMPLOYEE">
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="0..1" />
+    <End Role="EMPLOYEE1" Type="Self.EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE1">
+        <PropertyRef Name="Supervisor_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HAS_SKILL_EMPLOYEE1">
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="1" />
+    <End Role="HAS_SKILL" Type="Self.HAS_SKILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="HAS_SKILL">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HAS_SKILL_SKILL">
+    <End Role="SKILL" Type="Self.SKILL" Multiplicity="1" />
+    <End Role="HAS_SKILL" Type="Self.HAS_SKILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SKILL">
+        <PropertyRef Name="Skill_ID" />
+      </Principal>
+      <Dependent Role="HAS_SKILL">
+        <PropertyRef Name="Skill_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ORDER_CUSTOMER">
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="1" />
+    <End Role="ORDER" Type="Self.ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="ORDER">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ORDER_LINE_ORDER">
+    <End Role="ORDER" Type="Self.ORDER" Multiplicity="1" />
+    <End Role="ORDER_LINE" Type="Self.ORDER_LINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDER">
+        <PropertyRef Name="Order_ID" />
+      </Principal>
+      <Dependent Role="ORDER_LINE">
+        <PropertyRef Name="Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ORDER_LINE_PRODUCT">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="ORDER_LINE" Type="Self.ORDER_LINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="Product_ID" />
+      </Principal>
+      <Dependent Role="ORDER_LINE">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUCED_IN_PRODUCT">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="PRODUCED_IN" Type="Self.PRODUCED_IN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="Product_ID" />
+      </Principal>
+      <Dependent Role="PRODUCED_IN">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUCED_IN_WORK_CENTER">
+    <End Role="WORK_CENTER" Type="Self.WORK_CENTER" Multiplicity="1" />
+    <End Role="PRODUCED_IN" Type="Self.PRODUCED_IN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WORK_CENTER">
+        <PropertyRef Name="Work_Center_ID" />
+      </Principal>
+      <Dependent Role="PRODUCED_IN">
+        <PropertyRef Name="Work_Center_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUCT_PRODUCT_LINE">
+    <End Role="PRODUCT_LINE" Type="Self.PRODUCT_LINE" Multiplicity="1" />
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT_LINE">
+        <PropertyRef Name="Product_Line_ID" />
+      </Principal>
+      <Dependent Role="PRODUCT">
+        <PropertyRef Name="Product_Line_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SALESPERSON_TERRITORY">
+    <End Role="TERRITORY" Type="Self.TERRITORY" Multiplicity="1" />
+    <End Role="SALESPERSON" Type="Self.SALESPERSON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TERRITORY">
+        <PropertyRef Name="Territory_ID" />
+      </Principal>
+      <Dependent Role="SALESPERSON">
+        <PropertyRef Name="Territory_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUPPLIES_RAW_MATERIAL">
+    <End Role="RAW_MATERIAL" Type="Self.RAW_MATERIAL" Multiplicity="1" />
+    <End Role="SUPPLIES" Type="Self.SUPPLIES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RAW_MATERIAL">
+        <PropertyRef Name="Material_ID" />
+      </Principal>
+      <Dependent Role="SUPPLIES">
+        <PropertyRef Name="Material_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUPPLIES_VENDER">
+    <End Role="VENDER" Type="Self.VENDER" Multiplicity="1" />
+    <End Role="SUPPLIES" Type="Self.SUPPLIES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VENDER">
+        <PropertyRef Name="Vender_ID" />
+      </Principal>
+      <Dependent Role="SUPPLIES">
+        <PropertyRef Name="Vender_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USES_PRODUCT">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="USES" Type="Self.USES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="Product_ID" />
+      </Principal>
+      <Dependent Role="USES">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USES_RAW_MATERIAL">
+    <End Role="RAW_MATERIAL" Type="Self.RAW_MATERIAL" Multiplicity="1" />
+    <End Role="USES" Type="Self.USES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RAW_MATERIAL">
+        <PropertyRef Name="Material_ID" />
+      </Principal>
+      <Dependent Role="USES">
+        <PropertyRef Name="Material_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WORKS_IN_EMPLOYEE">
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="1" />
+    <End Role="WORKS_IN" Type="Self.WORKS_IN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="WORKS_IN">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WORKS_IN_WORK_CENTER">
+    <End Role="WORK_CENTER" Type="Self.WORK_CENTER" Multiplicity="1" />
+    <End Role="WORKS_IN" Type="Self.WORKS_IN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WORK_CENTER">
+        <PropertyRef Name="Work_Center_ID" />
+      </Principal>
+      <Dependent Role="WORKS_IN">
+        <PropertyRef Name="Work_Center_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="S2G3_DBModelStoreContainer">
+    <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOES_BUSINESS_IN" EntityType="Self.DOES_BUSINESS_IN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLOYEE" EntityType="Self.EMPLOYEE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HAS_SKILL" EntityType="Self.HAS_SKILL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDER" EntityType="Self.ORDER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDER_LINE" EntityType="Self.ORDER_LINE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCED_IN" EntityType="Self.PRODUCED_IN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCT_LINE" EntityType="Self.PRODUCT_LINE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RAW_MATERIAL" EntityType="Self.RAW_MATERIAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SALESPERSON" EntityType="Self.SALESPERSON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SKILL" EntityType="Self.SKILL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUPPLIES" EntityType="Self.SUPPLIES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TERRITORY" EntityType="Self.TERRITORY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USES" EntityType="Self.USES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VENDER" EntityType="Self.VENDER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WORK_CENTER" EntityType="Self.WORK_CENTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WORKS_IN" EntityType="Self.WORKS_IN" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DOES_BUSINESS_IN_CUSTOMER" Association="Self.FK_DOES_BUSINESS_IN_CUSTOMER">
+      <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+      <End Role="DOES_BUSINESS_IN" EntitySet="DOES_BUSINESS_IN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOES_BUSINESS_IN_TERRITORY" Association="Self.FK_DOES_BUSINESS_IN_TERRITORY">
+      <End Role="TERRITORY" EntitySet="TERRITORY" />
+      <End Role="DOES_BUSINESS_IN" EntitySet="DOES_BUSINESS_IN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_EMPLOYEE" Association="Self.FK_EMPLOYEE_EMPLOYEE">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+      <End Role="EMPLOYEE1" EntitySet="EMPLOYEE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HAS_SKILL_EMPLOYEE1" Association="Self.FK_HAS_SKILL_EMPLOYEE1">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+      <End Role="HAS_SKILL" EntitySet="HAS_SKILL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HAS_SKILL_SKILL" Association="Self.FK_HAS_SKILL_SKILL">
+      <End Role="SKILL" EntitySet="SKILL" />
+      <End Role="HAS_SKILL" EntitySet="HAS_SKILL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ORDER_CUSTOMER" Association="Self.FK_ORDER_CUSTOMER">
+      <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+      <End Role="ORDER" EntitySet="ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ORDER_LINE_ORDER" Association="Self.FK_ORDER_LINE_ORDER">
+      <End Role="ORDER" EntitySet="ORDER" />
+      <End Role="ORDER_LINE" EntitySet="ORDER_LINE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ORDER_LINE_PRODUCT" Association="Self.FK_ORDER_LINE_PRODUCT">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="ORDER_LINE" EntitySet="ORDER_LINE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUCED_IN_PRODUCT" Association="Self.FK_PRODUCED_IN_PRODUCT">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="PRODUCED_IN" EntitySet="PRODUCED_IN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUCED_IN_WORK_CENTER" Association="Self.FK_PRODUCED_IN_WORK_CENTER">
+      <End Role="WORK_CENTER" EntitySet="WORK_CENTER" />
+      <End Role="PRODUCED_IN" EntitySet="PRODUCED_IN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUCT_PRODUCT_LINE" Association="Self.FK_PRODUCT_PRODUCT_LINE">
+      <End Role="PRODUCT_LINE" EntitySet="PRODUCT_LINE" />
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SALESPERSON_TERRITORY" Association="Self.FK_SALESPERSON_TERRITORY">
+      <End Role="TERRITORY" EntitySet="TERRITORY" />
+      <End Role="SALESPERSON" EntitySet="SALESPERSON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUPPLIES_RAW_MATERIAL" Association="Self.FK_SUPPLIES_RAW_MATERIAL">
+      <End Role="RAW_MATERIAL" EntitySet="RAW_MATERIAL" />
+      <End Role="SUPPLIES" EntitySet="SUPPLIES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUPPLIES_VENDER" Association="Self.FK_SUPPLIES_VENDER">
+      <End Role="VENDER" EntitySet="VENDER" />
+      <End Role="SUPPLIES" EntitySet="SUPPLIES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USES_PRODUCT" Association="Self.FK_USES_PRODUCT">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="USES" EntitySet="USES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USES_RAW_MATERIAL" Association="Self.FK_USES_RAW_MATERIAL">
+      <End Role="RAW_MATERIAL" EntitySet="RAW_MATERIAL" />
+      <End Role="USES" EntitySet="USES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WORKS_IN_EMPLOYEE" Association="Self.FK_WORKS_IN_EMPLOYEE">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+      <End Role="WORKS_IN" EntitySet="WORKS_IN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WORKS_IN_WORK_CENTER" Association="Self.FK_WORKS_IN_WORK_CENTER">
+      <End Role="WORK_CENTER" EntitySet="WORK_CENTER" />
+      <End Role="WORKS_IN" EntitySet="WORKS_IN" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

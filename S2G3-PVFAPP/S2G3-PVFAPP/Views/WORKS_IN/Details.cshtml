@@ -1,0 +1,50 @@
+﻿@model S2G3_PVFAPP.Models.WORKS_IN
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WORKS_IN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Joining_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Joining_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Enable_Flag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Enable_Flag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPLOYEE.Employee_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPLOYEE.Employee_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORK_CENTER.Work_Center_Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORK_CENTER.Work_Center_Location)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit",  new {employeeID= Model.Employee_ID, workCenterID=Model.Work_Center_ID } ) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

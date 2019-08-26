@@ -1,0 +1,50 @@
+﻿@model S2G3_PVFAPP.Models.PRODUCED_IN
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PRODUCED_IN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Production_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Production_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUCT.Product_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUCT.Product_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORK_CENTER.Work_Center_Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORK_CENTER.Work_Center_Location)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { productID=Model.Product_ID, workCenterID=Model.Work_Center_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

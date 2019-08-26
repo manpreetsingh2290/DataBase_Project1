@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="49a81982f4264a1eb70d8fd444bbfcff" Name="Diagram1">
+        <EntityTypeShape EntityType="S2G3_DBModel.CUSTOMER" Width="1.5" PointX="8.125" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.DOES_BUSINESS_IN" Width="1.5" PointX="8.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.EMPLOYEE" Width="1.5" PointX="7.125" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.HAS_SKILL" Width="1.5" PointX="4" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.ORDER" Width="1.5" PointX="8.375" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.ORDER_LINE" Width="1.5" PointX="8.875" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.PRODUCED_IN" Width="1.5" PointX="9" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.PRODUCT" Width="1.5" PointX="4.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.PRODUCT_LINE" Width="1.5" PointX="4.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.RAW_MATERIAL" Width="1.5" PointX="4" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.SALESPERSON" Width="1.5" PointX="1.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.SKILL" Width="1.5" PointX="1.125" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.SUPPLIES" Width="1.5" PointX="1.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.TERRITORY" Width="1.5" PointX="5.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.USES" Width="1.5" PointX="4" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.VENDER" Width="1.5" PointX="1.375" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.WORK_CENTER" Width="1.5" PointX="12" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="S2G3_DBModel.WORKS_IN" Width="1.5" PointX="10.625" PointY="15.125" IsExpanded="true" />
+        <AssociationConnector Association="S2G3_DBModel.FK_DOES_BUSINESS_IN_CUSTOMER" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_ORDER_CUSTOMER" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_DOES_BUSINESS_IN_TERRITORY" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_EMPLOYEE_EMPLOYEE" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_HAS_SKILL_EMPLOYEE1" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_WORKS_IN_EMPLOYEE" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_HAS_SKILL_SKILL" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_ORDER_LINE_ORDER" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_ORDER_LINE_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_PRODUCED_IN_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_PRODUCED_IN_WORK_CENTER" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_PRODUCT_PRODUCT_LINE" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_USES_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_SUPPLIES_RAW_MATERIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_USES_RAW_MATERIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_SALESPERSON_TERRITORY" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_SUPPLIES_VENDER" ManuallyRouted="false" />
+        <AssociationConnector Association="S2G3_DBModel.FK_WORKS_IN_WORK_CENTER" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

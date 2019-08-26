@@ -1,0 +1,50 @@
+﻿@model S2G3_PVFAPP.Models.DOES_BUSINESS_IN
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DOES_BUSINESS_IN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Business_Start_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Business_Start_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Business_End_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Business_End_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSTOMER.Customer_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSTOMER.Customer_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TERRITORY.Territory_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TERRITORY.Territory_ID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { customerID=Model.Customer_ID, territoryID=Model.Territory_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

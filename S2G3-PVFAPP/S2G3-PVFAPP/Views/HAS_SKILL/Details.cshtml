@@ -1,0 +1,42 @@
+﻿@model S2G3_PVFAPP.Models.HAS_SKILL
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HAS_SKILL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Enable_Flag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Enable_Flag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPLOYEE.Employee_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPLOYEE.Employee_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SKILL.Skill_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SKILL.Skill_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { employeeID=Model.Employee_ID, skillID=Model.Skill_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

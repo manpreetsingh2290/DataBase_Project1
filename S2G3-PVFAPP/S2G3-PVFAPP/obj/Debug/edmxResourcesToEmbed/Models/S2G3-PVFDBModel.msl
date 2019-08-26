@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="S2G3_DBModelStoreContainer" CdmEntityContainer="S2G3_PVFDBEntities">
+    <EntitySetMapping Name="CUSTOMER">
+      <EntityTypeMapping TypeName="S2G3_DBModel.CUSTOMER">
+        <MappingFragment StoreEntitySet="CUSTOMER">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
+          <ScalarProperty Name="Customer_Postal_Code" ColumnName="Customer_Postal_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOES_BUSINESS_IN">
+      <EntityTypeMapping TypeName="S2G3_DBModel.DOES_BUSINESS_IN">
+        <MappingFragment StoreEntitySet="DOES_BUSINESS_IN">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Territory_ID" ColumnName="Territory_ID" />
+          <ScalarProperty Name="Business_Start_Date" ColumnName="Business_Start_Date" />
+          <ScalarProperty Name="Business_End_Date" ColumnName="Business_End_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEE">
+      <EntityTypeMapping TypeName="S2G3_DBModel.EMPLOYEE">
+        <MappingFragment StoreEntitySet="EMPLOYEE">
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Employee_Name" ColumnName="Employee_Name" />
+          <ScalarProperty Name="Employee_Address" ColumnName="Employee_Address" />
+          <ScalarProperty Name="Supervisor_ID" ColumnName="Supervisor_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HAS_SKILL">
+      <EntityTypeMapping TypeName="S2G3_DBModel.HAS_SKILL">
+        <MappingFragment StoreEntitySet="HAS_SKILL">
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Skill_ID" ColumnName="Skill_ID" />
+          <ScalarProperty Name="Enable_Flag" ColumnName="Enable_Flag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER">
+      <EntityTypeMapping TypeName="S2G3_DBModel.ORDER">
+        <MappingFragment StoreEntitySet="ORDER">
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_LINE">
+      <EntityTypeMapping TypeName="S2G3_DBModel.ORDER_LINE">
+        <MappingFragment StoreEntitySet="ORDER_LINE">
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Ordered_Quantity" ColumnName="Ordered_Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCED_IN">
+      <EntityTypeMapping TypeName="S2G3_DBModel.PRODUCED_IN">
+        <MappingFragment StoreEntitySet="PRODUCED_IN">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Work_Center_ID" ColumnName="Work_Center_ID" />
+          <ScalarProperty Name="Production_Date" ColumnName="Production_Date" />
+          <ScalarProperty Name="Product_Quantity" ColumnName="Product_Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCT">
+      <EntityTypeMapping TypeName="S2G3_DBModel.PRODUCT">
+        <MappingFragment StoreEntitySet="PRODUCT">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Product_Description" ColumnName="Product_Description" />
+          <ScalarProperty Name="Product_Standard_Price" ColumnName="Product_Standard_Price" />
+          <ScalarProperty Name="Product_Line_ID" ColumnName="Product_Line_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCT_LINE">
+      <EntityTypeMapping TypeName="S2G3_DBModel.PRODUCT_LINE">
+        <MappingFragment StoreEntitySet="PRODUCT_LINE">
+          <ScalarProperty Name="Product_Line_ID" ColumnName="Product_Line_ID" />
+          <ScalarProperty Name="Product_Line_Name" ColumnName="Product_Line_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RAW_MATERIAL">
+      <EntityTypeMapping TypeName="S2G3_DBModel.RAW_MATERIAL">
+        <MappingFragment StoreEntitySet="RAW_MATERIAL">
+          <ScalarProperty Name="Material_ID" ColumnName="Material_ID" />
+          <ScalarProperty Name="Material_Name" ColumnName="Material_Name" />
+          <ScalarProperty Name="Material_Standard_Cost" ColumnName="Material_Standard_Cost" />
+          <ScalarProperty Name="Unit_Of_Measure" ColumnName="Unit_Of_Measure" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SALESPERSON">
+      <EntityTypeMapping TypeName="S2G3_DBModel.SALESPERSON">
+        <MappingFragment StoreEntitySet="SALESPERSON">
+          <ScalarProperty Name="Salesperson_ID" ColumnName="Salesperson_ID" />
+          <ScalarProperty Name="Salesperson_Name" ColumnName="Salesperson_Name" />
+          <ScalarProperty Name="Salesperson_Telephone" ColumnName="Salesperson_Telephone" />
+          <ScalarProperty Name="Salesperson_Fax" ColumnName="Salesperson_Fax" />
+          <ScalarProperty Name="Territory_ID" ColumnName="Territory_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SKILL">
+      <EntityTypeMapping TypeName="S2G3_DBModel.SKILL">
+        <MappingFragment StoreEntitySet="SKILL">
+          <ScalarProperty Name="Skill_ID" ColumnName="Skill_ID" />
+          <ScalarProperty Name="Skill_Name" ColumnName="Skill_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUPPLIES">
+      <EntityTypeMapping TypeName="S2G3_DBModel.SUPPLIES">
+        <MappingFragment StoreEntitySet="SUPPLIES">
+          <ScalarProperty Name="Vender_ID" ColumnName="Vender_ID" />
+          <ScalarProperty Name="Material_ID" ColumnName="Material_ID" />
+          <ScalarProperty Name="Supply_Unit_Price" ColumnName="Supply_Unit_Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TERRITORY">
+      <EntityTypeMapping TypeName="S2G3_DBModel.TERRITORY">
+        <MappingFragment StoreEntitySet="TERRITORY">
+          <ScalarProperty Name="Territory_ID" ColumnName="Territory_ID" />
+          <ScalarProperty Name="Territory_Name" ColumnName="Territory_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USES">
+      <EntityTypeMapping TypeName="S2G3_DBModel.USES">
+        <MappingFragment StoreEntitySet="USES">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Material_ID" ColumnName="Material_ID" />
+          <ScalarProperty Name="Goes_Into_Quantity" ColumnName="Goes_Into_Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VENDER">
+      <EntityTypeMapping TypeName="S2G3_DBModel.VENDER">
+        <MappingFragment StoreEntitySet="VENDER">
+          <ScalarProperty Name="Vender_ID" ColumnName="Vender_ID" />
+          <ScalarProperty Name="Vender_Name" ColumnName="Vender_Name" />
+          <ScalarProperty Name="Vender_Address" ColumnName="Vender_Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WORK_CENTER">
+      <EntityTypeMapping TypeName="S2G3_DBModel.WORK_CENTER">
+        <MappingFragment StoreEntitySet="WORK_CENTER">
+          <ScalarProperty Name="Work_Center_ID" ColumnName="Work_Center_ID" />
+          <ScalarProperty Name="Work_Center_Location" ColumnName="Work_Center_Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WORKS_IN">
+      <EntityTypeMapping TypeName="S2G3_DBModel.WORKS_IN">
+        <MappingFragment StoreEntitySet="WORKS_IN">
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Work_Center_ID" ColumnName="Work_Center_ID" />
+          <ScalarProperty Name="Joining_Date" ColumnName="Joining_Date" />
+          <ScalarProperty Name="Enable_Flag" ColumnName="Enable_Flag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
